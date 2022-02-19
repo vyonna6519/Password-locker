@@ -5,7 +5,7 @@ from credentials import Credentials # Importing the account class
 class TestCredentials(unittest.TestCase):
     def setUp(self):
        
-        self.new_credentials = Credentials("Victor","Rocker","123456789","victor@g.com") # create Account object
+        self.new_credentials = Credentials("Vyonna","Rocker","123456789","vyonnaa@g.com") # create Account object
 
     
     def test_init(self):
