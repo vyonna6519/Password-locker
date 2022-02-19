@@ -1,60 +1,60 @@
-class Credentials:
+class details:
     """
     Class that generates new instances of users.
     """
-    credentials_list = [] #empty credentials list
+    details_list = [] #empty details list
 
-    def __init__(self,credentials_name,usr_name,password,email):
-        self.credentials_name = credentials_name
+    def __init__(self,details_name,usr_name,password,email):
+        self.details_name = details_name
         self.usr_name = usr_name
         self.password = password
         self.email = email    
 
-    def save_credentials(self):
+    def save_details(self):
 
         '''
-        save_credentials method saves credentials objects into credentials_list
+        save_details method saves details objects into details_list
         '''
 
-        Credentials.credentials_list.append(self)    
+        details.details_list.append(self)    
 
 
-    def delete_credentials(self):
+    def delete_details(self):
 
         '''
-        delete_credentials method deletes a saved credentials from the credentials_list
+        delete_details method deletes a saved details from the details_list
         '''
 
-        Credentials.credentials_list.remove(self)   
+        details.details_list.remove(self)   
 
 
     @classmethod
     def find_by_name(cls,name):
-        for credentials in cls.credentials_list:
-            if credentials.credentials_name == name:
-                return credentials  
+        for details in cls.details_list:
+            if details.details_name == name:
+                return details  
 
 
     @classmethod
-    def credentials_exist(cls,name):
+    def details_exist(cls,name):
         '''
-        Method that checks if a credentials exists from the credentials list.
+        Method that checks if a details exists from the details list.
         Args:
             name: Acc name to search if it exists
         Returns :
-            Boolean: True or false depending if the credentials exists
+            Boolean: True or false depending if the details exists
         '''
-        for credentials in cls.credentials_list:
-            if credentials.password == name:
-                    return credentials
+        for details in cls.details_list:
+            if details.password == name:
+                    return details
 
         return False      
 
 
     @classmethod
-    def display_credentials(cls):  #check this line later
+    def display_details(cls):  #check this line later
         '''
-        method that returns the credentials list
+        method that returns the details list
         '''
-        return cls.credentials_list
+        return cls.details_list
         

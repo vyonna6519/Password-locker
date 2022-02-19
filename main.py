@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 from account import Account
-from credentials import Credentials
+from details import details
 
 def create_account(account_name,user_name,password,email):
     '''
@@ -39,46 +39,46 @@ def display_accounts():
     Function that returns all the saved accounts
     '''
     return Account.display_accounts()  
- #_________________________________________CREDENTIALS____________________________________________________________________
+ #_________________________________________details____________________________________________________________________
 
 
-def create_credentials(credentials_name,usr_name,password,email):
+def create_details(details_name,usr_name,password,email):
     '''
     Function to create a new account
     '''
-    new_credentials = Credentials(credentials_name,usr_name,password,email)
-    return new_credentials
+    new_details = details(details_name,usr_name,password,email)
+    return new_details
 
-def save_credentials(credentials):
+def save_details(details):
     '''
     Function to save account
     '''
-    credentials.save_credentials()    
+    details.save_details()    
 
-def del_credentials(credentials):
+def del_details(details):
     '''
     Function to delete a account
     '''
-    credentials.delete_credentials()    
+    details.delete_details()    
 
 
-def find_credentials(name):
+def find_details(name):
     '''
     Function that finds a account by nane and returns the account
     '''
-    return Credentials.find_by_name(name)    
+    return details.find_by_name(name)    
 
-def check_existing_credentials(name):
+def check_existing_details(name):
     '''
     Function that check if an account exists with that name and return a Boolean
     '''
-    return Credentials.credentials_exist(name)    
+    return details.details_exist(name)    
 
-def display_credentials():  
+def display_details():  
     '''
     Function that returns all the saved accounts
     '''
-    return Credentials.display_credentials() 
+    return details.display_details() 
 
 
 
@@ -125,33 +125,33 @@ def main():
                 print("\033[1;32;1m   \n")
                 print(f"You are now logged in to your {account_name} account :)")
                 print("\033[1;37;1m   \n")
-                #========================================CREDENTIALS AREA=======================================================================
+                #========================================details AREA=======================================================================
                 while True:
                     print('''
                     Use these short codes:
                     CA -> Create new credential.
-                    DC -> Display your credentials.
-                    ex ->Log out your credentials account.''')
+                    DC -> Display your details.
+                    ex ->Log out your details account.''')
                     short_code = input().lower()
                     if short_code == "ca":
                         print("Create new credential")
                         print('_' * 20)
-                        credentials_name = input('Credential name:')
+                        details_name = input('Credential name:')
                         print('\n')
-                        usr_name = input(f"{credentials_name} user name:")
+                        usr_name = input(f"{details_name} user name:")
                         print('\n')
                         print('*' * 20)
-                        pwd = input(f"{credentials_name} password:")
-                        save_credentials(create_credentials(credentials_name,u_name,pwd,e_address))
+                        pwd = input(f"{details_name} password:")
+                        save_details(create_details(details_name,u_name,pwd,e_address))
                         print('\n')
-                        print(f"A New {credentials_name} Account with the username  {usr_name} has been created.")
+                        print(f"A New {details_name} Account with the username  {usr_name} has been created.")
                         print ('\n')
                     elif short_code == 'dc':
-                         if display_credentials():
-                             print("Here are your credentials:")
+                         if display_details():
+                             print("Here are your details:")
                              print('\n')
-                             for credentials in display_credentials():
-                                 print(f"Credential name:{credentials.credentials_name}  Username: {credentials.usr_name} Password:{credentials.password}")
+                             for details in display_details():
+                                 print(f"Credential name:{details.details_name}  Username: {details.usr_name} Password:{details.password}")
                                  print('\n')
                          else:
                               print('\n')

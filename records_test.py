@@ -1,11 +1,11 @@
 import unittest # Importing the unittest module
-from credentials import Credentials # Importing the account class
+from details import details # Importing the account class
 
 
-class TestCredentials(unittest.TestCase):
+class Testdetails(unittest.TestCase):
     def setUp(self):
        
-        self.new_credentials = Credentials("Vyonna","vee","123456789","vyonna@g.com") # create Account object
+        self.new_details = details("Vyonna","vee","123456789","vyonna@g.com") # create Account object
 
     
     def test_init(self):
@@ -13,75 +13,75 @@ class TestCredentials(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credentials.credentials_name,"Vyonna")
-        self.assertEqual(self.new_credentials.usr_name,"Vee")
-        self.assertEqual(self.new_credentials.password,"123456789")
-        self.assertEqual(self.new_credentials.email,"vyonna@g.com")
+        self.assertEqual(self.new_details.details_name,"Vyonna")
+        self.assertEqual(self.new_details.usr_name,"Vee")
+        self.assertEqual(self.new_details.password,"123456789")
+        self.assertEqual(self.new_details.email,"vyonna@g.com")
 
-    def test_save_credentials(self):
+    def test_save_details(self):
         '''
         test_save_account test case to test if the account object is saved into
          the account list
         '''
-        self.new_credentials.save_credentials() # saving the new account
-        self.assertEqual(len(Credentials.credentials_list),1)  
+        self.new_details.save_details() # saving the new account
+        self.assertEqual(len(details.details_list),1)  
 
 
     def tearDown(self):
             '''
             tearDown method that does clean up after each test case has run.
             '''
-            Credentials.credentials_list = []    
+            details.details_list = []    
 
 
-    def test_save_multiple_credentials(self):
+    def test_save_multiple_details(self):
             '''
             test_save_multiple_account to check if we can save multiple account
             objects to our account_list
             '''
-            self.new_credentials.save_credentials()
-            test_credentials = Credentials("Test","user","0712345678","test@user.com") # new account
-            test_credentials.save_credentials()
-            self.assertEqual(len(Credentials.credentials_list),2)
+            self.new_details.save_details()
+            test_details = details("Test","user","0712345678","test@user.com") # new account
+            test_details.save_details()
+            self.assertEqual(len(details.details_list),2)
 
 
-    def test_delete_credentials(self):
+    def test_delete_details(self):
             '''
             test_delete_account to test if we can remove an account from our account list
             '''
-            self.new_credentials.save_credentials()
-            test_credentials = Credentials("Test","user","0712345678","test@user.com") # account
-            test_credentials.save_credentials()
+            self.new_details.save_details()
+            test_details = details("Test","user","0712345678","test@user.com") # account
+            test_details.save_details()
 
-            self.new_credentials.delete_credentials()# Deleting an account object
-            self.assertEqual(len(Credentials.credentials_list),1) 
+            self.new_details.delete_details()# Deleting an account object
+            self.assertEqual(len(details.details_list),1) 
 
-    def test_find_credentials_by_credentials_name(self):
+    def test_find_details_by_details_name(self):
         '''
         test to check if we can find an account by account_name and display information
         '''
 
-        self.new_credentials.save_credentials()
-        test_credentials = Credentials("Test","user","0711222333","test@user.com") # new account
-        test_credentials.save_credentials()
+        self.new_details.save_details()
+        test_details = details("Test","user","0711222333","test@user.com") # new account
+        test_details.save_details()
 
-        found_credentials = Credentials.find_by_name("Test")
+        found_details = details.find_by_name("Test")
 
-        self.assertEqual(found_credentials.email,test_credentials.email)  
+        self.assertEqual(found_details.email,test_details.email)  
 
 
 
-    def test_credentials_exists(self):
+    def test_details_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the account.
         '''
 
-        self.new_credentials.save_credentials()
-        test_credentials = Credentials("Test","user","0711222333","test@user.com") # new account
-        test_credentials.save_credentials()
+        self.new_details.save_details()
+        test_details = details("Test","user","0711222333","test@user.com") # new account
+        test_details.save_details()
 
-        credentials_exists = Credentials.credentials_exist("0711222333")
-        self.assertTrue(credentials_exists)    
+        details_exists = details.details_exist("0711222333")
+        self.assertTrue(details_exists)    
         
                        
 
