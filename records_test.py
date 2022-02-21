@@ -1,5 +1,5 @@
 import unittest # Importing the unittest module
-from details import details # Importing the account class
+from records import details # Importing the account class
 
 
 class Testdetails(unittest.TestCase):
@@ -14,7 +14,7 @@ class Testdetails(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_details.details_name,"Vyonna")
-        self.assertEqual(self.new_details.usr_name,"Vee")
+        self.assertEqual(self.new_details.usr_name,"vee")
         self.assertEqual(self.new_details.password,"123456789")
         self.assertEqual(self.new_details.email,"vyonna@g.com")
 
