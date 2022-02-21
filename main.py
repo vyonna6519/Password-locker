@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 from account import Account
-from details import details
+from records import details
 
 def create_account(account_name,user_name,password,email):
     '''
@@ -165,12 +165,12 @@ def main():
                         
             else:
                 print('\n')
-                print("INCORRECT PASSWORD!! PLEASE ENTER CORRECT PASSWORD TO LOGIN:")
+                print("INCORRECT PASSWORD!! PLEASE ENTER CORRECT PASSWORD:")
                 print('\n')
                 print('\n')
                     
         elif short_code == "ex":
-                    print(f"Thank you {user_name} for your time! Looking forward to seeing you again. Adios...")
+                    print(f"Thank you {user_name} for your time!")
                     break
         else:
                     print("I did not understand. Please use the short codes provided :)")
