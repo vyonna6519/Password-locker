@@ -36,22 +36,16 @@ As a user I would like:
 ### Cloning
 * In your terminal:
         
-        $ git clone 
+        $ git clone https://github.com/vyonna6519/Password-locker.git
         $ cd Password-Locker
-
-## Running the Application
-* To run the application, in your terminal:
-
-        $ chmod +x password_locker.py
-        $ ./password_locker.py
         
 ## Testing the Application
 * To run the tests for the class file:
 
-        $ python3.6 user_credentials_test.py
+        $ python3.6 accounts_test.py
         
 ## Technologies Used
 * Python3.6
 
 ## License
-MIT &copy;2022 [license.Md]()
+MIT &copy;2022 [LICENSE.md]()
