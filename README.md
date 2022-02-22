@@ -28,7 +28,7 @@ As a user I would like:
 
 ## SetUp / Installation Requirements
 ### Prerequisites
-* python3.6
+* python3.8
 * pip
 * pyperclip
 * xclip
@@ -42,7 +42,7 @@ As a user I would like:
 ## Testing the Application
 * To run the tests for the class file:
 
-        $ python3.6 accounts_test.py
+        $ python3.8 accounts_test.py
         
 ## Technologies Used
 * Python3.8
