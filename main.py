@@ -84,15 +84,15 @@ def display_details():
 
 
 def main():
-    print("Greetings! Welcome to your Password Locker. What is your name?")
+    print("Hello! Welcome to Password Locker. What is your name?")
     user_name = input()
-    print(f"Hello {user_name}, sign up to Password Locker to create an account.")
+    print(f"Hello {user_name}, sign up to create an account.")
     print('\n')
     while True:
-        print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display your account.\n LN ->LOGIN.\n ex ->exit Password Locker. ")
+        print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display account.\n LN ->LOGIN.\n ex ->exit Password Locker. ")
         short_code = input().lower()
         if short_code == 'su':
-            print("Create a Password Locker Account")
+            print("Create an Account")
             print("_"*100)
             account_name = input('Account name:')
             print ('\n')
@@ -125,7 +125,7 @@ def main():
                 print("\033[1;32;1m   \n")
                 print(f"You are now logged in to your {account_name} account :)")
                 print("\033[1;37;1m   \n")
-                #========================================details AREA=======================================================================
+                
                 while True:
                     print('''
                     Use these short codes:
@@ -173,7 +173,7 @@ def main():
                     print(f"Thank you {user_name} for your time!")
                     break
         else:
-                    print("I did not understand. Please use the short codes provided :)")
+                    print("I did not understand. Please use the short codes provided")
 
 if __name__ == '__main__':
     main()
